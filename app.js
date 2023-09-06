@@ -44,7 +44,7 @@ dbconexion.connect((err) => {
 //desabilitando x-powered-by (header HTTP) para seguridad
 app.disable('x-powered-by')
 
-//seleccionando ruta de elementos estaticos
+//seleccionando ruta de elementos estaticos 
 app.use(express.static('public'));
 
 //configurando motor de vistas
