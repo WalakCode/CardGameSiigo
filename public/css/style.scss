@@ -16,11 +16,20 @@ body{
     }
 }
 
+@media screen and (min-height:800px){
+    .register{
+        height: 700px; 
+    }
+}
+@media screen and (max-height:690px){
+    .register{
+        height: 540px; 
+    }
+}
 
 
 
 .register{
-    height: 520px;
     justify-content: center;
     display: flex;
     align-items: center;
