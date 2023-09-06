@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Battle</title>
+</head>
+<body>
+
+    <h1><%= user %></h1>
+
+    <div>
+        
+        <form action="room-join">
+            <h1>unirse a sala</h1>
+            <h2>codigo de sala</h2>
+            <input type="text" id="in-code"> <br><br>
+            <button>ingresa</button>
+        </form>
+
+        <form action="room-create">
+            <h1>crear sala</h1>
+            <h2>nombre de sala</h2>
+            <input type="text" name="" id="name-room">
+            <h2>codigo sala</h2>
+            <input type="text" id="cod-room" readonly value=""><button id="code-btn" type="button">Genera codigo</button><br><br>
+            <button>ingresa</button>
+        </form>
+        
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const codigoInput = document.getElementById('cod-room');
+  const codeBtn = document.getElementById('code-btn');
+  
+  codeBtn.addEventListener('click', function() {
+    fetch('/generatecode')
+      .then(response => response.json())
+      .then(data => {
+        codigoInput.value = data.codigo;
+      })
+      .catch(error => {
+        console.error('Error al generar el código:', error);
+      });
+  });
+});
+</script>
+</body>
+</html>
