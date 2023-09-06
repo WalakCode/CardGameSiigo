@@ -1,0 +1,14 @@
+// login
+$colorfono: gray; 
+$colorletra: rgba(255, 255, 255, 0.74); 
+$tipoletra: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+@mixin HFbasico(){
+    display: flex; //esto me ayuda a centrarlo 
+    align-items: center; //cetrar el texto automaticamente
+    font-family: $tipoletra;
+}
+
+
+    
+// termina login

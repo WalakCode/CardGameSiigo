@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Battle</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
     
-    <div>
-        <h1>Logeate</h1>
+    <div class="logueate">
+        <h1 class="letra">Logeate</h1>
+    </div>
 
-        <form action="/create-room" id="userform" method="POST">
-            <h1>usuario</h1>
-            <input type="text" id="nickname" name="nickname">
-            <h1>Contraseña</h1>
-            <input type="text" id="password" name="password">
-            <button id="subir">sube</button>
-        </form>
+    <div class="register">
+
+        <div class="register-1">
+            <form action="/create-room" id="userform" method="POST">
+                <h1 class="usuario">Usuario</h1>
+                <input type="text" id="nickname" name="nickname" >
+                <h1 class="contra">Contraseña</h1>
+                <input type="password" id="password" name="password" > <br>
+                <button id="subir" class="subir"><strong>Sube</strong></button>
+            </form>
+        </div>
+        
+    </div>
 
         <% if (error) { %>
             <h2><%= error %>!</h2>
