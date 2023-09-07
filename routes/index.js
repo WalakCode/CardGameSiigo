@@ -3,9 +3,6 @@ const express = require('express'); //pidiendo express
 const router = express.Router(); //pidiendo el router de express
 const controladorUsuario = require('../controllers/userController'); //pidiendo un controlador
 const controladorSala = require('../controllers/roomControler'); //pidiendo un controlador
-const authMiddleware = require('../middlewares/auth')
-
-
 
 
 //ruta principal

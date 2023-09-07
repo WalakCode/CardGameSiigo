@@ -1,8 +1,6 @@
-const UserModel = require('../model/userModel');//pidiendo el modelo de usuario
 const { v4: uuidv4 } = require('uuid');
 const crypto = require('crypto');
-const io = require('../config/socketConfig');
-const { callbackify } = require('util');
+
 
 const controladorSala = {
 

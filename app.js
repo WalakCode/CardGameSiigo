@@ -1,16 +1,17 @@
 //importando paquetes
 const express = require('express'); //pidiendo express
 const http = require('http'); // pidiendo el modulo HTTP
-const socketIo = require("socket.io"); //pidiendo el modulo socket.io
+const socketIo = require('socket.io');
 const dbconexion = require('./config/config'); //creando la conexion
 const router = require('./routes/index');
-const session = require('express-session') 
-
+const session = require('express-session');
 
 //creando instancias
 const app = express(); //instanciando express
-const server = http.createServer(app)//instanciando HTTP
-const io = socketIo(server)//instanciando socket.io
+const server = http.createServer(app);//instanciando HTTP
+
+const io = socketIo(server);
+
 
 
 app.use(session({
@@ -18,9 +19,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie:{secure:false},  
-}))
-
-
+}));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -37,8 +36,9 @@ dbconexion.connect((err) => {
     })
   });
 
+
 //desabilitando x-powered-by (header HTTP) para seguridad
-app.disable('x-powered-by')
+app.disable('x-powered-by');
 
 //seleccionando ruta de elementos estaticos 
 app.use(express.static('public'));
@@ -49,7 +49,10 @@ app.set('view engine', 'ejs');
 //redireccionando gestion de rutas
 app.use('/',router);
 
-module.exports = {app , io};
+
+module.exports = io;
+
+
 
 
 
