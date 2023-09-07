@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-index">
         <h1 class="title-header">owo</h1>
+        <a class="iniciar-index" href="/login" id="a-form">inicia sesion</a>
     </div>
 
     <div class="contenedor-registro">
@@ -16,29 +17,26 @@
             <form action="/" id="userform" method="POST">
                 <h1 class="registrar">Registrate</h1> <br>
                 <h1 class="usuario">usuario</h1>
-                <input type="text" id="nickname" name="nickname">
+                <input class="campo-index" type="text" id="nickname" name="nickname">
                 <h1 class="password">Contraseña</h1>
-                <input type="text" id="password" name="password">
-                <button id="subir">sube</button>
+                <input class="campo-index" type="text" id="password" name="password">
+                <button id="subir" class="subir-index">Sube</button>
+                <div class="error-index">
+                    <% if (error) { %>
+                        <h2 class="error"><%= error %>!</h2>
+                      <% } else { %>
+                        
+                      <% } %>
+                      
+                    
+                </div>
             </form>
         </div>
         
         
         
     </div>
-    <div class="container-error">
-        <div class="error">
-            <% if (error) { %>
-                <h2 class="error"><%= error %>!</h2>
-              <% } else { %>
-                
-              <% } %>
-              
-            <h2>ya tienes cuenta?</h2>
-            
-            <a href="/login" id="a-form">inicia sesion</a>
-        </div>
-    </div>
+    
     
     
 </body>

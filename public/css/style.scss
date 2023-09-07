@@ -42,12 +42,7 @@ body{
         
     }
     .campoentrada{
-        width: 250px;
-        height: 36px;
-        border-radius: 10px;
-        font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
+        @include modulo.inputs();
     }
     .usuario{
         margin-top: 0px;
@@ -69,17 +64,45 @@ body{
 
 // index
 
-.container{
+.container-index{
     @include modulo.HFbasico();
     height: 80px;
     background-color: modulo.$colorfono;
+    justify-content: space-between;
     .title-header{
         margin: 0px 0px 0px 20px;
         padding: 0px;
         color: modulo.$colorletra;
     }
+    .iniciar-index{
+        margin: 0px 30px 0px 0px;
+        padding: 0px;
+        color: modulo.$colorletra;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .iniciar-index:hover{
+        scale: calc(1.05);
+        color: rgba(0, 0, 0, 0.466);
+        transition: 1s;
+    }
+    .iniciar-index:not(:hover){
+        scale: calc(1);
+        transition: 1.5s;
+    }
 }
 
+@media screen and (min-height:800px){
+    .contenedor-registro{
+        height: 700px; 
+    }
+}
+@media screen and (max-height:690px){
+    .contenedor-registro{
+        height: 600px; 
+    }
+}
 .contenedor-registro{
     justify-content: center;
     display: flex;
@@ -88,10 +111,34 @@ body{
     .registro{
         @include modulo.container-registros();
         width: 350px ;
-        height: 415px ;
+        height: 480px ;
     }
     
     .registrar{
         color: modulo.$colorletra;
+        margin: 0px
     }
+    .campo-index{
+        @include modulo.inputs();
+    }
+    .subir-index{
+        @include modulo.botones();
+        font-weight: bold;
+    }
+    .subir-index:hover{
+        transform: scale(1.1) ;
+        transition: 2s;
+    }
+    .subir-index:not(:hover){
+        transform: scale(1) ;
+        transition: 2s;
+    }
+    .error-index{
+        margin: 0px 10px 0px 10px;
+        color: rgba(0, 0, 0, 0.466);
+    }
+    
 }
+
+
+
