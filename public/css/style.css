@@ -26,10 +26,6 @@ body {
     height: 540px;
   }
 }
-.hola {
-  margin: auto;
-}
-
 .register {
   justify-content: center;
   display: flex;
@@ -57,10 +53,6 @@ body {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-}
-
-.usuario {
-  margin-top: 0px;
 }
 
 .subir {
@@ -92,11 +84,18 @@ body {
   background-color: gray;
   justify-content: space-between;
 }
-.container-index .iniciar-index {
-  margin: 0px 0px 0px 30px;
-  padding: 0px;
+.container-index .registrar {
   color: rgba(255, 255, 255, 0.74);
-  font-size: 25px;
+  margin: 0px 0px 0px 30px;
+}
+.container-index .iniciar-index {
+  margin: 0px 30px 0px 30px;
+  padding: 0px;
+  color: rgba(0, 0, 0, 0.615);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
 }
@@ -138,9 +137,25 @@ body {
   width: 350px;
   height: 480px;
 }
-.contenedor-registro .registrar {
+.contenedor-registro .usuario {
+  margin-top: 0px;
+}
+.contenedor-registro .iniciar-index {
+  margin: 5px 0px 0px 0px;
+  padding: 0px;
   color: rgba(255, 255, 255, 0.74);
-  margin: 0px;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.contenedor-registro .iniciar-index:hover {
+  scale: 1.05;
+  color: rgba(0, 0, 0, 0.466);
+  transition: 1s;
+}
+.contenedor-registro .iniciar-index:not(:hover) {
+  scale: 1;
+  transition: 1.5s;
 }
 .contenedor-registro .campo-index {
   width: 250px;
@@ -159,6 +174,7 @@ body {
   border-radius: 10px;
   font-size: 15px;
   cursor: pointer;
+  margin-top: 25px;
   font-weight: bold;
 }
 .contenedor-registro .subir-index:hover {
@@ -171,7 +187,19 @@ body {
 }
 .contenedor-registro .error-index {
   margin: 0px 10px 0px 10px;
-  color: rgba(0, 0, 0, 0.466);
+  color: black;
+}
+
+.header-name {
+  display: flex;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 80px;
+  background-color: gray;
+}
+.header-name .name-usuario {
+  color: rgba(255, 255, 255, 0.74);
+  margin: 0px 0px 0px 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

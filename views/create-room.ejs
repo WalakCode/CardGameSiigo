@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Battle</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+     <div class="header-name">
+        <h1 class="name-usuario"><%= user %></h1>
+     </div>
 
-    <h1><%= user %></h1>
+    <div class="unirse-crear">
+      
+        <div class="unirse-sala">
 
-    <div>
-        
-        <form action="room-join">
+          <form action="room-join">
             <h1>unirse a sala</h1>
             <h2>codigo de sala</h2>
             <input type="text" id="in-code"> <br><br>
             <button>ingresa</button>
-        </form>
+          </form>
+        
+        </div>
 
-        <form action="room-create">
+        <div class="crear-sala">
+
+          <form action="room-create">
             <h1>crear sala</h1>
             <h2>nombre de sala</h2>
             <input type="text" name="" id="nameroom" name="nameroom">
             <h2>codigo sala</h2>
             <input type="text" id="coderoom" name="coderoom" readonly value=""><button id="code-btn" type="button">Genera codigo</button><br><br>
             <button>ingresa</button>
-        </form>
+          </form>
+        
+        </div>
         
     </div>
 

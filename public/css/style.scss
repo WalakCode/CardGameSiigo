@@ -28,9 +28,7 @@ body{
 }
 
 
-.hola{
-    margin: auto;
-}
+
 .register{
     justify-content: center;
     display: flex;
@@ -46,9 +44,7 @@ body{
     .campoentrada{
         @include modulo.inputs();
     }
-    .usuario{
-        margin-top: 0px;
-    }
+    
     .subir{
         @include modulo.botones();
     }
@@ -72,11 +68,18 @@ body{
     background-color: modulo.$colorfono;
     justify-content: space-between;
     
-    .iniciar-index{
-        margin: 0px 0px 0px 30px;
-        padding: 0px;
+    .registrar{
         color: modulo.$colorletra;
-        font-size: 25px;
+        margin: 0px 0px 0px 30px;
+    }
+    .iniciar-index{
+        margin: 0px 30px 0px 30px;
+        padding: 0px;
+        color: rgba(0, 0, 0, 0.615);
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 20px;
         font-weight: bold;
         text-decoration: none;
     }
@@ -111,16 +114,34 @@ body{
         width: 350px ;
         height: 480px ;
     }
+    .usuario{
+        margin-top: 0px;
+    }
     
-    .registrar{
+    .iniciar-index{
+        margin: 5px 0px 0px 0px;
+        padding: 0px;
         color: modulo.$colorletra;
-        margin: 0px
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .iniciar-index:hover{
+        scale: calc(1.05);
+        color: rgba(0, 0, 0, 0.466);
+        transition: 1s;
+    }
+    .iniciar-index:not(:hover){
+        scale: calc(1);
+        transition: 1.5s;
     }
     .campo-index{
         @include modulo.inputs();
     }
     .subir-index{
         @include modulo.botones();
+        margin-top: 25px;
+        // margin-bottom: 2px;
         font-weight: bold;
     }
     .subir-index:hover{
@@ -133,10 +154,21 @@ body{
     }
     .error-index{
         margin: 0px 10px 0px 10px;
-        color: rgba(0, 0, 0, 0.466);
+        color: black;
     }
     
 }
 
+// create-room
+
+.header-name{
+    @include modulo.HFbasico();
+    height: 80px;
+    background-color: modulo.$colorfono;
+    .name-usuario{
+        color: modulo.$colorletra;
+        margin: 0px 0px 0px 30px;
+    }
+}
 
 
