@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Battle</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
-    <h1>owo</h1>
-    <h1>hello world</h1>
-    <div>
-        <h1>Registrate</h1>
-
-        <form action="/" id="userform" method="POST">
-            <h1>usuario</h1>
-            <input type="text" id="nickname" name="nickname">
-            <h1>Contraseña</h1>
-            <input type="text" id="password" name="password">
-            <button id="subir">sube</button>
-        </form>
-        
-        <% if (error) { %>
-            <h2><%= error %>!</h2>
-          <% } else { %>
-            
-          <% } %>
-          
-        <h2>ya tienes cuenta?</h2>
-        
-        <a href="/login" id="a-form">inicia sesion</a>
-
+    <div class="container">
+        <h1 class="title-header">owo</h1>
     </div>
 
+    <div class="contenedor-registro">
+        <div class="registro">
+            <form action="/" id="userform" method="POST">
+                <h1 class="registrar">Registrate</h1> <br>
+                <h1 class="usuario">usuario</h1>
+                <input type="text" id="nickname" name="nickname">
+                <h1 class="password">Contraseña</h1>
+                <input type="text" id="password" name="password">
+                <button id="subir">sube</button>
+            </form>
+        </div>
+        
+        
+        
+    </div>
+    <div class="container-error">
+        <div class="error">
+            <% if (error) { %>
+                <h2 class="error"><%= error %>!</h2>
+              <% } else { %>
+                
+              <% } %>
+              
+            <h2>ya tienes cuenta?</h2>
+            
+            <a href="/login" id="a-form">inicia sesion</a>
+        </div>
+    </div>
+    
+    
 </body>
 </html>

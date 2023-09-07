@@ -36,19 +36,12 @@ body{
     
     }
     .register-1{
-        background-color: modulo.$colorfono;
+        @include modulo.container-registros();
         width: 350px ;
         height: 415px ;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: modulo.$tipoletra;
-        color: modulo.$colorletra;
-        border-radius: 30px;
-        border: 2px solid black;
+        
     }
-    input{
+    .campoentrada{
         width: 250px;
         height: 36px;
         border-radius: 10px;
@@ -59,28 +52,46 @@ body{
     .usuario{
         margin-top: 0px;
     }
-    button{
-        margin-top: 40px;
-        margin-bottom: 0px;
-        height: 36px;
-        width: 120px;
-        font-family: Arial, Helvetica, sans-serif;
-        border-radius: 10px;
-        font-size: 15px;
-        cursor: pointer;
-
+    .subir{
+        @include modulo.botones();
     }
     .subir:hover{
         transform: scale(1.1) ;
         transition: 2s;
-        
     }
     .subir:not(:hover){
         transform: scale(1) ;
         transition: 2s;
     }
-        
+    
+    
 
 
 // index
 
+.container{
+    @include modulo.HFbasico();
+    height: 80px;
+    background-color: modulo.$colorfono;
+    .title-header{
+        margin: 0px 0px 0px 20px;
+        padding: 0px;
+        color: modulo.$colorletra;
+    }
+}
+
+.contenedor-registro{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    .registro{
+        @include modulo.container-registros();
+        width: 350px ;
+        height: 415px ;
+    }
+    
+    .registrar{
+        color: modulo.$colorletra;
+    }
+}
