@@ -23,7 +23,6 @@ const modeloUsuario = {
             if(err){
                 return callback(err,null)
             }
-            console.log("se saco iformacion")
             return callback(null,results);
         })
     }
