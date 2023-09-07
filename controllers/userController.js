@@ -25,20 +25,25 @@ const controladorUsuario = {
     },
 
     verificarUsuario:(usuario,callback)=>{
-      UserModel.obtenerUsuarioPorNombre(usuario,(err,results)=>{
-        if(err){
-          console.error('error en la consulta de usuario',err)
-          return(callback(err,null))
-        }
-        if(results.length !== 0){
-          let error = 'usuario ya existe en la base de datos'
-          console.log(error)
-          return callback(null,error)
-        }else{
-          console.log('no existe el user')
-          return callback(null,null)
-        }
-      })
+      if(usuario.usuario && usuario.contraseña){
+        UserModel.obtenerUsuarioPorNombre(usuario,(err,results)=>{
+          if(err){
+            console.error('error en la consulta de usuario',err)
+            return(callback(err,null))
+          }
+          if(results.length !== 0){
+            let error = 'usuario ya existe en la base de datos'
+            console.log(error)
+            return callback(null,error)
+          }else{
+            console.log('no existe el user')
+            return callback(null,null)
+          }
+        })
+      }else{
+        let error = 'ingrese todos los datos'
+        return callback(null,error)
+      }
     },
 
 

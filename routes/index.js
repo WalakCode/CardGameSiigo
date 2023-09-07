@@ -17,10 +17,12 @@ router.get('/', (req, res) => {
 //registrarse
 router.post('/', (req, res) => {
 
-const usuario = req.body.nickname; 
-const contraseña = req.body.password;
+const nuevoUsuario={
+  usuario : req.body.nickname,
+  contraseña : req.body.password,
+}
 
-controladorUsuario.verificarUsuario(usuario,(err,error)=>{
+controladorUsuario.verificarUsuario(nuevoUsuario,(err,error)=>{
  if(err){
   console.error('error al verificarla',err);
  }
@@ -94,10 +96,20 @@ router.get('/generatecode',(req,res)=>{
   })
 }),
 
+router.get('/room-create'),(req,res)=>{
+  if(req.session.usuario){
+    let user = req.session.usuario
+    res.render('room',{ user })
+  }else{
+    res.redirect('login')
+  }
+}
 
+router.post('/room-create'),(req,res)=>{
+  const roomname = req.body.nameroom
+  const roomcode = req.body.coderoom
 
-
-
-
+  
+}
 //exporta modulo router
 module.exports = router;
