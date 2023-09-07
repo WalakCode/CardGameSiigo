@@ -8,18 +8,18 @@ const { resourceUsage } = require('process');
 
 //controlador de usuario
 const controladorUsuario = {
-    //funcion para crear usuarios
-    crearUsuarios:(usuario,contraseña,callback) =>{//pide usuario, contraseña y un callback
-        const nuevoUsuario ={ //crea un objeto nuevo usuario donde se almacena el usuario y contraseña ya procesado
+  
+    crearUsuarios:(usuario,contraseña,callback) =>{
+        const nuevoUsuario ={ 
             usuario: usuario,
             contraseña: contraseña, 
         };
-        UserModel.crearUsuario(nuevoUsuario,(err) =>{//usa el modelo crear usuario y le da el objeto nevo usuario y un error
-            if(err){//si hay un error devuelve el error
-                console.error('error en la consulta:', err);
-                return callback(err);
+        UserModel.crearUsuario(nuevoUsuario,(err) =>{
+            if(err){
+              console.error('error en la consulta:', err);
+              return callback(err);
             }
-            return callback(null)//si no hay error no devuelve nada
+            return callback(null)
 
         })  
     },

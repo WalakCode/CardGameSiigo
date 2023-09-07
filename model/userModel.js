@@ -4,15 +4,13 @@ const dbconexion = require('../config');//pide conexion y configuracion de la ba
 //modelo de usuario
 const modeloUsuario = {
 
-    //funcion de crear usuarios
     crearUsuario:(nuevoUsuario, callback) =>{
-        const query = 'INSERT INTO usuarios SET ?';//query SQL
-        //se envia el query nuevo usuario ya creado en el controlador
+        const query = 'INSERT INTO usuarios SET ?';
         dbconexion.query(query,nuevoUsuario,(err)=>{
             if (err){
-                return callback(err);//si da error manda error
+                return callback(err);
             }
-            return callback(null);//si no, no manda nada
+            return callback(null);
         });
     },
 

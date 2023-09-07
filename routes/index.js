@@ -29,6 +29,7 @@ controladorUsuario.verificarUsuario(usuario,(err,error)=>{
     res.redirect('/')
  }else{
   console.log('to fue bien')
+  
   controladorUsuario.crearUsuarios(usuario, contraseña, (err) => {
     if (err) {
       console.error('Error al insertar usuario:', err);
@@ -64,7 +65,6 @@ router.get('/create-room',(req,res)=>{
 router.post('/create-room',(req,res)=>{
   const usuario = req.body.nickname; 
   const contraseña = req.body.password;
-  
   
 controladorUsuario.iniciarSesion(usuario,contraseña,(err,autenticando,error)=>{
   if (err) {
