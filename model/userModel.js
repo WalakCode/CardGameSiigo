@@ -1,5 +1,5 @@
 //importacion
-const dbconexion = require('../config');//pide conexion y configuracion de la base de datos
+const dbconexion = require('../config/config');//pide conexion y configuracion de la base de datos
 
 //modelo de usuario
 const modeloUsuario = {
