@@ -171,4 +171,89 @@ body{
     }
 }
 
+@media screen and (min-height:800px){
+    .encabezado-unirse-crear{
+        height: 750px; 
+    }
+}
+@media screen and (max-height:690px){
+    .encabezado-unirse-crear{
+        height: 800px; 
+    }
+}
+hr{
+    width: 80%;
+    margin-top: 20px;
+}
+.encabezado-unirse-crear{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+    }
 
+    .unirse-crear-container{
+        @include modulo.container-registros();
+        height: 500px;
+        width:  550px;
+        
+    }
+    .codigo-sala{
+        @include modulo.inputs();
+        height: 25px;
+    }
+    .name-codigo-sala{
+        @include modulo.inputs();
+        height: 25px;
+        margin-left: -5px;
+    }
+    .cod-codigo-sala{
+        @include modulo.inputs();
+        height: 25px;
+        margin-left: 15px;
+        margin-top: 20px
+    }
+    .botones-room{
+        @include modulo.botones();
+        margin: 20px 0px 0px 0px;
+    }
+    .botones-room:hover{
+        transform: scale(1.1) ;
+        transition: 2s;
+        font-weight: bold;
+    }
+    .botones-room:not(:hover){
+        transform: scale(1) ;
+        transition: 2s;
+        font-weight: bold;
+    }
+    .boton-room{
+        @include modulo.botones();
+        width: 150px;
+        margin: 20px 0px 0px 20px;
+
+    }
+    .boton-room:hover{
+        transform: scale(1.1) ;
+        transition: 2s;
+        font-weight: bold;
+    }
+    .boton-room:not(:hover){
+        transform: scale(1) ;
+        transition: 2s;
+        font-weight: bold;
+    }
+    .codigo{
+        font-size: 25px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+   
+    
+    
+    .crear{
+        margin-bottom: 15px;
+        color: modulo.$colorletra;
+        color: black;
+    }
+    
