@@ -2,7 +2,7 @@
 const express = require('express'); //pidiendo express
 const http = require('http'); // pidiendo el modulo HTTP
 const socketIo = require("socket.io"); //pidiendo el modulo socket.io
-const dbconexion = require('./config'); //creando la conexion
+const dbconexion = require('./config/config'); //creando la conexion
 const router = require('./routes/index');
 const session = require('express-session') 
 
@@ -12,12 +12,6 @@ const app = express(); //instanciando express
 const server = http.createServer(app)//instanciando HTTP
 const io = socketIo(server)//instanciando socket.io
 
-app.use((req, res, next) => {
-  res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.header('Expires', '0');
-  res.header('Pragma', 'no-cache');
-  next();
-});
 
 app.use(session({
   secret:'NFAUOFPI02MC0',
@@ -25,6 +19,8 @@ app.use(session({
   saveUninitialized: true,
   cookie:{secure:false},  
 }))
+
+
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -52,6 +48,8 @@ app.set('view engine', 'ejs');
 
 //redireccionando gestion de rutas
 app.use('/',router);
+
+module.exports = {app , io};
 
 
 

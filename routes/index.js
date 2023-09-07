@@ -2,6 +2,7 @@
 const express = require('express'); //pidiendo express
 const router = express.Router(); //pidiendo el router de express
 const controladorUsuario = require('../controllers/userController'); //pidiendo un controlador
+const controladorSala = require('../controllers/roomControler'); //pidiendo un controlador
 const authMiddleware = require('../middlewares/auth')
 
 
@@ -83,7 +84,7 @@ controladorUsuario.iniciarSesion(usuario,contraseña,(err,autenticando,error)=>{
 
 
 router.get('/generatecode',(req,res)=>{
-  controladorUsuario.crearCodigoSala((err,respuesta)=>{
+  controladorSala.crearCodigoSala((err,respuesta)=>{
     if(err){
       res.render('error');
     }else{
@@ -106,7 +107,7 @@ router.get('/room-create'),(req,res)=>{
 router.post('/room-create'),(req,res)=>{
   const roomname = req.body.nameroom
   const roomcode = req.body.coderoom
-
+  
   
 }
 //exporta modulo router
