@@ -24,8 +24,8 @@ const controladorUsuario = {
         })  
     },
 
-    verificarUsuario:(usuario,callback)=>{
-      if(usuario.usuario && usuario.contraseña){
+    verificarUsuario:(usuario,contraseña,callback)=>{
+      if(usuario && contraseña){
         UserModel.obtenerUsuarioPorNombre(usuario,(err,results)=>{
           if(err){
             console.error('error en la consulta de usuario',err)

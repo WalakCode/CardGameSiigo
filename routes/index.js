@@ -17,12 +17,10 @@ router.get('/', (req, res) => {
 //registrarse
 router.post('/', (req, res) => {
 
-const nuevoUsuario={
-  usuario : req.body.nickname,
-  contraseña : req.body.password,
-}
+const usuario = req.body.nickname; 
+const contraseña = req.body.password;
 
-controladorUsuario.verificarUsuario(nuevoUsuario,(err,error)=>{
+controladorUsuario.verificarUsuario(usuario,contraseña,(err,error)=>{
  if(err){
   console.error('error al verificarla',err);
  }
