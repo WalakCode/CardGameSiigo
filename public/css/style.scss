@@ -257,3 +257,6 @@ hr{
         color: black;
     }
     
+    .ventana-emergente{
+        @include modulo.venta();
+    }

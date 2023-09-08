@@ -331,4 +331,12 @@ hr {
   color: black;
 }
 
+.ventana-emergente {
+  display: none;
+  width: 100px;
+  border: solid black 1px;
+  background-color: red;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

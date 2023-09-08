@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Battle</title>
     <link rel="stylesheet" href="/css/style.css">
-</head>
+    <script src="/css/style.js"></script>
+    </head>
 <body>
-    
+        
     <div class="logueate">
         <h1 class="letra">Logeate</h1>
     </div>
@@ -24,9 +25,9 @@
             </form>
         </div>
         
-        <div  class="ventana-emergente">
+        <div id="iderror" class="ventana-emergente">
             <% if (error) { %>
-                <h2><%= error %>!</h2>
+                <h2 id="mostrar-error"><%= error %>!</h2>
               <% } else { %>
                 
               <% } %>
