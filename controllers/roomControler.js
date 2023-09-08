@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const crypto = require('crypto');
+const io = require('../game')
 
 
 const controladorSala = {
@@ -16,8 +17,8 @@ const controladorSala = {
         }
     },
 
-    crearSala:(callback)=>{
-        
+    crearSala:(callback)=>{   
+      return callback(null)
     }
 }
 

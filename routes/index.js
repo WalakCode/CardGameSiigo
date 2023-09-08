@@ -3,6 +3,7 @@ const express = require('express'); //pidiendo express
 const router = express.Router(); //pidiendo el router de express
 const controladorUsuario = require('../controllers/userController'); //pidiendo un controlador
 const controladorSala = require('../controllers/roomControler'); //pidiendo un controlador
+const cache = require('../cache')
 
 
 //ruta principal
@@ -33,6 +34,8 @@ controladorUsuario.verificarUsuario(usuario,contraseña,(err,error)=>{
       console.error('Error al insertar usuario:', err);
       res.render('error');
     } else {
+        cache.borrarCacheUsuario()
+        cache.cacheUsuario(usuario)
         req.session.usuario = usuario;
         res.redirect('create-room')
     }
@@ -47,7 +50,7 @@ router.get('/login',(req,res)=>{
   res.render('login',{error});
 })
 
-
+//logearse
 router.get('/create-room',(req,res)=>{
     if(req.session.usuario){
       let user = req.session.usuario
@@ -58,8 +61,6 @@ router.get('/create-room',(req,res)=>{
    
   }),
 
-
-//logearse
 router.post('/create-room',(req,res)=>{
   const usuario = req.body.nickname; 
   const contraseña = req.body.password;
@@ -69,6 +70,8 @@ controladorUsuario.iniciarSesion(usuario,contraseña,(err,autenticando,error)=>{
     res.render('error');
   } else{
     if(autenticando){
+      cache.borrarCacheUsuario()
+      cache.cacheUsuario(usuario)
       req.session.usuario = usuario;
       res.redirect('create-room');  
     }else{
@@ -92,20 +95,32 @@ router.get('/generatecode',(req,res)=>{
   })
 }),
 
-router.get('/room-create'),(req,res)=>{
+
+
+router.get('/room-create',(req,res)=>{
   if(req.session.usuario){
-    let user = req.session.usuario
+    let user = req.session.usuario;
     res.render('room',{ user })
   }else{
     res.redirect('login')
   }
-}
+})
 
-router.post('/room-create'),(req,res)=>{
+router.post('/room-create',(req,res)=>{
   const roomname = req.body.nameroom
   const roomcode = req.body.coderoom
-  
-  
-}
+
+  controladorSala.crearSala((err)=>{
+    if(err){
+      res.render('error')
+    }else{
+      let usuario = cache.cacheUsuario();
+      console.log(usuario)
+      req.session.usuario = usuario;
+      res.redirect('room-create')
+    }
+  })
+})
+
 //exporta modulo router
 module.exports = router;

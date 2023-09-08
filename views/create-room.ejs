@@ -8,7 +8,7 @@
 </head>
 <body>
      <div class="header-name">
-        <h1 class="name-usuario"><%= user %></h1>
+        <h1 class="name-usuario" id="name-usuario" name="name-usuario" ><%= user %></h1>
      </div>
 
     <div class="encabezado-unirse-crear">
@@ -27,14 +27,14 @@
         </div>
 
         <div class="crear-sala">
-          <form action="room-create">
+          <form action="room-create" method="POST">
             <h1 class="crear">crear sala</h1>
             <label class="codigo">Nombre de la sala</label>
             <input class="name-codigo-sala" type="text" name="" id="name-room" > <br>
             <label class="codigo">Codigo de la sala</label>
             <input class="cod-codigo-sala" type="text" id="coderoom" readonly value=""> <br>
-              <button class="botones-room">ingresa</button>
-              <button id="code-btn" type="button" class="boton-room">Genera codigo</button>
+            <button class="botones-room">ingresa</button>
+            <button id="code-btn" type="button" class="boton-room">Genera codigo</button>
             
           </form>
         

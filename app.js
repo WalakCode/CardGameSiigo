@@ -9,9 +9,7 @@ const session = require('express-session');
 //creando instancias
 const app = express(); //instanciando express
 const server = http.createServer(app);//instanciando HTTP
-
 const io = socketIo(server);
-
 
 
 app.use(session({
@@ -47,10 +45,10 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 //redireccionando gestion de rutas
+
 app.use('/',router);
 
 
-module.exports = io;
 
 
 
