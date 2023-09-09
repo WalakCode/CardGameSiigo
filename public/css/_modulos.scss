@@ -1,0 +1,10 @@
+$colorFondo: rgb(22, 27, 34); 
+$colorLetra: rgb(0, 207, 200);
+$colorFondoButton: rgb(35, 134, 54);
+$colorFondoForm: rgb(27, 31, 35);
+
+
+@mixin centraTexto(){
+    display: flex;
+    align-items: center;
+}
