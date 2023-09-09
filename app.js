@@ -13,7 +13,6 @@ const server = http.createServer(app);//instanciando HTTP
 const io = socketIo(server);
 
 
-
 app.use(session({
   secret:'NFAUOFPI02MC0',
   resave: false,
@@ -35,7 +34,6 @@ dbconexion.connect((err) => {
         console.log('server on');
     })
   });
-
 
 //desabilitando x-powered-by (header HTTP) para seguridad
 app.disable('x-powered-by');
