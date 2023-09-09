@@ -34,7 +34,6 @@ dbconexion.connect((err) => {
     })
   });
 
-
 //desabilitando x-powered-by (header HTTP) para seguridad
 app.disable('x-powered-by');
 
