@@ -138,6 +138,9 @@
   margin-right: auto;
   width: 260px;
 }
+.containerBodyRegister .containerRegister .textRegister {
+  margin: 20px 0px 18px 0px;
+}
 .containerBodyRegister .containerRegister .inputRegister {
   background-color: rgb(22, 27, 34);
   border: 0px;
@@ -173,8 +176,113 @@
   text-align: center;
 }
 
-.textRegister {
+.bodyRoom {
+  background-color: rgb(22, 27, 34);
+}
+
+.containerRoomText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  color: white;
+  height: 80px;
+  margin-left: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
+.containerRoomText .titleRoom {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.containerBodyRoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  color: white;
+}
+.containerBodyRoom .containerRoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(27, 31, 35);
+  border-radius: 10px;
+  width: 620px;
+  height: 400px;
+  height: 450px;
+}
+.containerBodyRoom .containerRoom .centerRoom {
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+}
+.containerBodyRoom .containerRoom .formRoom1 {
+  display: block;
+  width: 450px;
+}
+.containerBodyRoom .containerRoom .formRoom2 {
+  display: block;
+}
+.containerBodyRoom .containerRoom .textRoom {
   margin: 20px 0px 18px 0px;
+}
+.containerBodyRoom .containerRoom .labelRoom {
+  font-size: 25px;
+  margin-right: 10px;
+}
+.containerBodyRoom .containerRoom .labelRoomA {
+  font-size: 25px;
+  margin-right: 2px;
+}
+.containerBodyRoom .containerRoom .inputRoom {
+  background-color: rgb(22, 27, 34);
+  border: 0px;
+  color: white;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+  width: 260px;
+  height: 25px;
+}
+.containerBodyRoom .containerRoom .inputRoomA {
+  background-color: rgb(22, 27, 34);
+  border: 0px;
+  color: white;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+  width: 260px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+.containerBodyRoom .containerRoom .buttonRoom {
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(35, 134, 54);
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 0px;
+  margin-top: 20px;
+  width: 200px;
+  height: 35px;
+}
+.containerBodyRoom .containerRoom .centrarButtoRoom {
+  text-align: center;
+}
+.containerBodyRoom .containerRoom .buttonRoom:hover {
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+.containerBodyRoom .containerRoom .buttonRoom:not(:hover) {
+  transform: scale(1);
+  transition: 0.4s;
+}
+.containerBodyRoom .containerRoom .errorSystem {
+  margin-left: auto;
+  margin-right: auto;
+  width: 265px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=estilos.css.map */

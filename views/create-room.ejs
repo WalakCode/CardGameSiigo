@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Battle</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-     <div class="header-name">
-        <h1 class="name-usuario" id="name-usuario" name="name-usuario" ><%= user %></h1>
+<body class="bodyRoom">
+     <div class="containerRoomText">
+        <h1 class="titleRoom" id="name-usuario" name="name-usuario" ><%= user %></h1>
      </div>
 
-    <div class="encabezado-unirse-crear">
-      <div class="unirse-crear-container">
-      <div class="unirse-crear">
+    <div class="containerBodyRoom">
+      <div class="centerRoom">
+        <div class="containerRoom">
+          <div class="">
+            <div class="formRoom1">
+              <form action="room-join">
+                <p class="textRoom"><strong>Unirse a sala</strong></p>
+                <label class="labelRoom">Codigo de sala</label>
+                <input class="inputRoom" type="text" id="in-code"><br>
+                <div class="centrarButtoRoom"><button class="buttonRoom" >ingresa</button></div>
+                
+              </form>
+            </div>
 
-        <div class="unirse-sala">
-
-          <form action="room-join">
-            <h1 class="crear">unirse a sala</h1>
-            <label class="codigo">Codigo de sala</label>
-            <input class="codigo-sala" type="text" id="in-code"> <br>
-            <button class="botones-room">ingresa</button>
-          </form>
-        <hr>
+            <div class="formRoom2">
+              <form action="room-create" method="POST">
+                <p class="textRoom"><strong>crear sala</strong></p>
+                <label class="  " >Nombre de la sala</label>
+                <input class="inputRoomA" type="text" name="" id="name-room" > <br>
+                <label class="labelRoom">Codigo de la sala</label>
+                <input class="inputRoom" type="text" id="coderoom" readonly value="">
+                <div class="centrarButtoRoom">
+                  <button class="buttonRoom" >ingresa</button>
+                  <button class="buttonRoom" id="code-btn" type="button" >Genera codigo</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <div class="crear-sala">
-          <form action="room-create" method="POST">
-            <h1 class="crear">crear sala</h1>
-            <label class="codigo">Nombre de la sala</label>
-            <input class="name-codigo-sala" type="text" name="" id="name-room" > <br>
-            <label class="codigo">Codigo de la sala</label>
-            <input class="cod-codigo-sala" type="text" id="coderoom" readonly value=""> <br>
-            <button class="botones-room">ingresa</button>
-            <button id="code-btn" type="button" class="boton-room">Genera codigo</button>
-            
-          </form>
-        
-        </div>
-      </div>
-    </div>  
+      </div>  
     </div>
 
 <script>

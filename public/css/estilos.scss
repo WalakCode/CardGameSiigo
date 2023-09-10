@@ -121,6 +121,10 @@
         margin-right: auto;
         width: 260px;
     }
+    .textRegister{
+        margin: 20px 0px 18px 0px;
+        
+    }
     
     .inputRegister{
         @include modulos.inputs();
@@ -152,8 +156,96 @@
     }
 }
 
+//room 
+.bodyRoom{
+    background-color: modulos.$colorFondo;
+}
 
-.textRegister{
-    margin: 20px 0px 18px 0px;
+.containerRoomText{
+    @include modulos.centraTexto();
+    justify-content: start;
+    color: white;
+    height: 80px;
+    margin-left: 30px;
+    font-family: 'Times New Roman', Times, serif;
+
     
+    .titleRoom{
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+
+.containerBodyRoom{
+    @include modulos.centraTexto();
+    height: 500px;
+    color: white;
+    .containerRoom{
+        @include modulos.centraTexto();
+        @include modulos.sala();
+        height: 450px;
+    .centerRoom{
+        margin-left: auto;
+        margin-right: auto;
+        width: 260px;
+    }
+    .formRoom1{
+        display: block;
+        width: 450px;
+    }
+    .formRoom2{
+        display: block;
+    }
+
+    .textRoom{
+        margin: 20px 0px 18px 0px;
+        
+    }
+    .labelRoom{
+        font-size: 25px;
+        margin-right: 10px
+    }
+    .labelRoomA{
+        font-size: 25px;
+        margin-right: 2px;
+    }
+    .inputRoom{
+        @include modulos.inputs();
+        width: 260px;
+        height: 25px;
+        
+    }
+    .inputRoomA{
+        @include modulos.inputs();
+        width: 260px;
+        height: 25px;
+        margin-bottom: 10px;
+        
+    }
+    .buttonRoom{
+        @include modulos.boton();
+        border: 0px;
+        margin-top: 20px;
+        width: 200px;
+        height: 35px;
+    }
+    .centrarButtoRoom{
+        text-align: center;
+    }
+    .buttonRoom:hover{
+        transform: scale(1.01);
+        transition: 0.2s;
+    }
+    .buttonRoom:not(:hover){
+        transform: scale(1);
+        transition: 0.4s;
+    }
+    .errorSystem{
+        margin-left: auto;
+        margin-right: auto;
+        width: 265px;
+        text-align: center;
+    }
+}
 }
