@@ -7,10 +7,10 @@
 .containerRegister{
     @include modulos.centraTexto();
     color: white;
+    font-family: 'Times New Roman', Times, serif;
+    height: 80px;
     justify-content: space-between;
     margin: 0px 30px 0px 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    height: 80px;
 
     .titleRegister{
         font-size: 25px;
@@ -31,7 +31,6 @@
         color: white;
         text-decoration: none;
         font-size: 20px;
-        transition:  text-decoration 0.8s ease;    
         
     }
     .linkLogin:hover{
@@ -44,15 +43,11 @@
 .containerBodyLogin{
     @include modulos.centraTexto();
     height: 500px;
-    justify-content: center;
+    
     .containerLogin{
         @include modulos.centraTexto();
-        color: white;
-        font-size: 25px;
-        width: 420px;
-        height: 400px;
-        background-color: modulos.$colorFondoForm;
-        border-radius: 10px;
+        @include modulos.container();
+        
        
     .centerLogin{
         margin-left: auto;
@@ -69,23 +64,17 @@
         text-align: center;
     }
     .inputLogin{
-        background-color: modulos.$colorFondo;
-        border: 0px;
-        color: white;
+        @include modulos.inputs();
         width: 260px;
         height: 25px;
-        border-radius: 5px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        
     }
     .buttonLogin{
-        font-weight: bold;
-        border-radius: 5px;
+        @include modulos.boton();
+        border: 0px;
         margin-top: 20px;
         width: 267px;
         height: 35px;
-        background-color: modulos.$colorFondoButton;
-        color: white;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     .buttonLogin:hover{
         transform: scale(1.01);
@@ -100,4 +89,71 @@
 
 }
 
+//login
+.bodyStart{
+    background-color: modulos.$colorFondo;
+}
+.containerLogeate{
+    @include modulos.centraTexto();
+    justify-content: start;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    height: 80px;
+    margin-left: 30px;
 
+    .titleLogeate{
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+
+.containerBodyRegister{
+    @include modulos.centraTexto();
+    height: 500px;
+    
+    .containerRegister{
+        @include modulos.centraTexto();
+        @include modulos.container();
+
+    .centerRegister{
+        margin-left: auto;
+        margin-right: auto;
+        width: 260px;
+    }
+    
+    .inputRegister{
+        @include modulos.inputs();
+        width: 260px;
+        height: 25px;
+        
+    }
+    .buttonRegister{
+        @include modulos.boton();
+        border: 0px;
+        margin-top: 20px;
+        width: 267px;
+        height: 35px;
+    }
+    .buttonRegister:hover{
+        transform: scale(1.01);
+        transition: 0.2s;
+    }
+    .buttonRegister:not(:hover){
+        transform: scale(1);
+        transition: 0.4s;
+    }
+    .errorSystem{
+        margin-left: auto;
+        margin-right: auto;
+        width: 265px;
+        text-align: center;
+    }
+    }
+}
+
+
+.textRegister{
+    margin: 20px 0px 18px 0px;
+    
+}

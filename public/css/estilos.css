@@ -5,11 +5,12 @@
 .containerRegister {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
+  font-family: "Times New Roman", Times, serif;
+  height: 80px;
   justify-content: space-between;
   margin: 0px 30px 0px 30px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  height: 80px;
 }
 .containerRegister .titleRegister {
   font-size: 25px;
@@ -18,6 +19,7 @@
 .containerRegister .containerLink {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .containerRegister .containerLink .textLogin {
   color: white;
@@ -29,7 +31,6 @@
   color: white;
   text-decoration: none;
   font-size: 20px;
-  transition: text-decoration 0.8s ease;
 }
 .containerRegister .containerLink .linkLogin:hover {
   text-decoration: underline;
@@ -39,18 +40,19 @@
 .containerBodyLogin {
   display: flex;
   align-items: center;
-  height: 500px;
   justify-content: center;
+  height: 500px;
 }
 .containerBodyLogin .containerLogin {
   display: flex;
   align-items: center;
-  color: white;
+  justify-content: center;
+  color: rgb(255, 255, 255);
   font-size: 25px;
-  width: 420px;
-  height: 400px;
   background-color: rgb(27, 31, 35);
   border-radius: 10px;
+  width: 420px;
+  height: 400px;
 }
 .containerBodyLogin .containerLogin .centerLogin {
   margin-left: auto;
@@ -70,20 +72,21 @@
   background-color: rgb(22, 27, 34);
   border: 0px;
   color: white;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
   width: 260px;
   height: 25px;
-  border-radius: 5px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .containerBodyLogin .containerLogin .buttonLogin {
   font-weight: bold;
   border-radius: 5px;
-  margin-top: 20px;
-  width: 267px;
-  height: 35px;
   background-color: rgb(35, 134, 54);
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 0px;
+  margin-top: 20px;
+  width: 267px;
+  height: 35px;
 }
 .containerBodyLogin .containerLogin .buttonLogin:hover {
   transform: scale(1.01);
@@ -92,6 +95,86 @@
 .containerBodyLogin .containerLogin .buttonLogin:not(:hover) {
   transform: scale(1);
   transition: 0.4s;
+}
+
+.bodyStart {
+  background-color: rgb(22, 27, 34);
+}
+
+.containerLogeate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  height: 80px;
+  margin-left: 30px;
+}
+.containerLogeate .titleLogeate {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.containerBodyRegister {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+.containerBodyRegister .containerRegister {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(27, 31, 35);
+  border-radius: 10px;
+  width: 420px;
+  height: 400px;
+}
+.containerBodyRegister .containerRegister .centerRegister {
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+}
+.containerBodyRegister .containerRegister .inputRegister {
+  background-color: rgb(22, 27, 34);
+  border: 0px;
+  color: white;
+  border-radius: 5px;
+  font-family: "Times New Roman", Times, serif;
+  width: 260px;
+  height: 25px;
+}
+.containerBodyRegister .containerRegister .buttonRegister {
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(35, 134, 54);
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 0px;
+  margin-top: 20px;
+  width: 267px;
+  height: 35px;
+}
+.containerBodyRegister .containerRegister .buttonRegister:hover {
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+.containerBodyRegister .containerRegister .buttonRegister:not(:hover) {
+  transform: scale(1);
+  transition: 0.4s;
+}
+.containerBodyRegister .containerRegister .errorSystem {
+  margin-left: auto;
+  margin-right: auto;
+  width: 265px;
+  text-align: center;
+}
+
+.textRegister {
+  margin: 20px 0px 18px 0px;
 }
 
 /*# sourceMappingURL=estilos.css.map */
