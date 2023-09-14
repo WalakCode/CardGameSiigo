@@ -8,7 +8,7 @@
 </head>
 <body class="bodyRoom">
      <div class="containerRoomText">
-        <h1 class="titleRoom" id="name-usuario" name="name-usuario" ><%= user %></h1>
+          <h1 class="titleRoom" id="name-usuario" name="name-usuario" ><%= user %></h1>
      </div>
 
     <div class="containerBodyRoom">
@@ -29,11 +29,11 @@
               <form action="room-create" method="POST">
                 <p class="textRoom"><strong>crear sala</strong></p>
                 <label class="  " >Nombre de la sala</label>
-                <input class="inputRoomA" type="text" name="" id="name-room" > <br>
+                <input class="inputRoomA" type="text" name="nameroom" id="nameroom"  > <br>
                 <label class="labelRoom">Codigo de la sala</label>
-                <input class="inputRoom" type="text" id="coderoom" readonly value="">
+                <input class="inputRoom" type="text" id="coderoom" name="coderoom"  readonly value="">
                 <div class="centrarButtoRoom">
-                  <button class="buttonRoom" >ingresa</button>
+                  <button class="buttonRoom" id="in-btn">ingresa</button>
                   <button class="buttonRoom" id="code-btn" type="button" >Genera codigo</button>
                 </div>
               </form>
@@ -42,7 +42,9 @@
         </div>
       </div>  
     </div>
-
+<div>
+      <h1 style="color: white;"><%= error %> </h1>
+</div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
   const codigoInput = document.getElementById('coderoom');

@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const crypto = require('crypto');
-const io = require('../app')
+const { error } = require('console');
 
 
 
@@ -18,8 +18,13 @@ const controladorSala = {
         }
     },
 
-    crearSala:(callback)=>{   
-      return callback(null)
+    crearSala:(sala,codigo,callback)=>{  
+      if(sala,codigo){
+        return callback(null)
+      }else{
+        const error = "ingrese todos los datos"
+        return callback(error)
+      }
     }
 }
 

@@ -7,24 +7,21 @@ const controladorUsuario = require('./controllers/userController'); //pidiendo u
 const controladorSala = require('./controllers/roomControler'); //pidiendo un controlador
 const cache = require('./cache')
 const { Server } = require("socket.io");
+const game = require("./public/js/game");
+const { error } = require('node:console');
 
 //creando instancias
 const app = express(); //instanciando express
 const server = createServer(app);//instanciando HTTP
-const io = new Server(server);
-
-io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
 
 app.use(session({
   secret:'NFAUOFPI02MC0',
   resave: false,
   saveUninitialized: true,
-  cookie:{secure:false},  
+  cookie:{
+    secure:false,
+    maxAge: 30 * 60 * 100,
+  },  
 }));
 
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +39,6 @@ dbconexion.connect((err) => {
     })
   });
 
-
 //desabilitando x-powered-by (header HTTP) para seguridad
 app.disable('x-powered-by');
 
@@ -51,11 +47,6 @@ app.use(express.static('public'));
 
 //configurando motor de vistas
 app.set('view engine', 'ejs');
-
-
-
-//configuracion socket io
-
 
 
 //ruta principal
@@ -106,7 +97,8 @@ app.get('/login',(req,res)=>{
 app.get('/create-room',(req,res)=>{
     if(req.session.usuario){
       let user = req.session.usuario
-      res.render('create-room',{ user })
+      let error = req.session.dato2
+      res.render('create-room',{ user , error })
     }else{
       res.redirect('login');
     }
@@ -125,6 +117,7 @@ controladorUsuario.iniciarSesion(usuario,contraseña,(err,autenticando,error)=>{
       cache.borrarCacheUsuario()
       cache.cacheUsuario(usuario)
       req.session.usuario = usuario;
+      req.session.dato2 = "";
       res.redirect('create-room');  
     }else{
       req.session.dato = error
@@ -133,7 +126,6 @@ controladorUsuario.iniciarSesion(usuario,contraseña,(err,autenticando,error)=>{
   }
 })
 }),
-
 
 app.get('/generatecode',(req,res)=>{
   controladorSala.crearCodigoSala((err,respuesta)=>{
@@ -149,7 +141,7 @@ app.get('/generatecode',(req,res)=>{
 
 app.get('/room-create',(req,res)=>{
   if(req.session.usuario){
-    let user = req.session.usuario;
+    const user = req.session.usuario;
     res.render('room',{ user })
   }else{
     res.redirect('login')
@@ -157,23 +149,38 @@ app.get('/room-create',(req,res)=>{
 })
 
 app.post('/room-create',(req,res)=>{
+
   const roomname = req.body.nameroom
   const roomcode = req.body.coderoom
 
-  controladorSala.crearSala((err)=>{
-    if(err){
-      res.render('error')
+// console.log(roomname,roomcode)
+  controladorSala.crearSala(roomcode,roomname,(results)=>{
+    if(results){
+      req.session.dato2 = results;
+      res.redirect('create-room')
     }else{
+      cache.cacheSala(roomname,roomcode)
       let usuario = cache.cacheUsuario();
-      console.log(usuario)
       req.session.usuario = usuario;
       res.redirect('room-create')
     }
   })
 })
 
+const io = new Server(server);
 
-module.exports = io;
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+const info = cache.cacheSala()
+console.log(info.codigo,"soy el codigo")
+socket.join(info.codigo)
+})
+  
+
+
 
 
 

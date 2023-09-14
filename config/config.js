@@ -1,7 +1,7 @@
 const mysql = require('mysql') //requiere mysql 
 
 //crea la configuracion de la base de datos
-const db = module.exports = {
+const db = {
     host: 'localhost',  
     user: 'root',
     password: '',
