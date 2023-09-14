@@ -115,7 +115,6 @@ router.post('/room-create',(req,res)=>{
       res.render('error')
     }else{
       let usuario = cache.cacheUsuario();
-      console.log(usuario)
       req.session.usuario = usuario;
       res.redirect('room-create')
     }
