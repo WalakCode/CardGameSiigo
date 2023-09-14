@@ -19,9 +19,7 @@ const controladorSala = {
     },
 
     crearSala:(callback)=>{   
-      console.log("si funciono")
       return callback(null)
-
     }
 }
 
